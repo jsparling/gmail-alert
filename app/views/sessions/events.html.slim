@@ -1,0 +1,35 @@
+p test
+
+/ = "Number of events: #{@events.count}"
+
+ul
+
+- @events.each do |event_array|
+  - event_array.each do |event|
+    li
+      /- require 'byebug'
+      /- byebug
+      / for some reason, it fails when i try event.start.dateTime
+      - startDate = event.start["dateTime"]
+      - if startDate.present?
+        => startDate.strftime('%m/%d/%y %l:%M %p')
+
+      - endDate = event.end["dateTime"]
+      - if endDate.present?
+        | -
+        - if endDate.strftime('%m/%d/%y') == startDate.strftime('%m/%d/%y')
+          =< endDate.strftime('%l:%M %p')
+        - else
+          =< endDate.strftime('%m/%d/%y %l:%M %p')
+
+      - tempDate = event.start.date
+      - if tempDate.present?
+        => Time.parse(tempDate).strftime('%m/%d/%y')
+        | (all day)
+
+      =< event.summary
+
+
+
+/ = debug @result.data
+

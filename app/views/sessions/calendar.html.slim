@@ -1,0 +1,12 @@
+p Test
+
+
+- @calendar_list["items"].each do |calendar|
+  = calendar["summary"]
+  =< " - "
+  =< calendar["id"]
+  br
+
+
+= debug @calendar_list
+= debug @result.data

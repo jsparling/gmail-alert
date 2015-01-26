@@ -5,6 +5,10 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', :require => 'google/api_client'
 gem 'json'
 gem 'sqlite3'
+gem 'byebug'
+
+# Slim for layouts, includes scaffolding
+gem "slim-rails"
 
     # Better errors for debugging
   gem "better_errors"
