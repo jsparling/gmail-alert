@@ -1,18 +1,42 @@
+require 'viewpoint'
+require 'time'
+
 class SessionsController < ApplicationController
   layout false
-
+   include Viewpoint::EWS
 
   def new
+
+
+    #this was in the new method.
+        # EWS, works but not secure i think
+    # Make sure you uncomment the include for Viewpoint
+    endpoint = 'https://outlook.office365.com/ews/Exchange.asmx'
+    user = 'jsparling@avvo.com'
+    pass = ''
+
+
+    @cli = Viewpoint::EWSClient.new endpoint, user, pass
+
+    calendar = @cli.get_folder(:calendar)
+
+    @event_list = calendar.items
+
+
   end
 
   def create
+    require 'byebug'
+    byebug
     # What data comes back from OmniAuth?
     @auth = request.env["omniauth.auth"]
     @credentials = @auth['credentials']
-    # Use the token from the data to request a list of calendars
+
     @token = @credentials["token"]
+    provider = @auth.provider
 
     Token.create(
+      provider: provider,
       access_token: @credentials['token'],
       refresh_token: @credentials['refresh_token'],
       expires_at: Time.at(@credentials['expires_at']).to_datetime)

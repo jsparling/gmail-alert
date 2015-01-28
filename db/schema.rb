@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124220438) do
+ActiveRecord::Schema.define(version: 20150127040720) do
 
   create_table "tokens", force: true do |t|
     t.string   "access_token"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150124220438) do
     t.datetime "expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
   end
 
 end

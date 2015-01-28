@@ -5,11 +5,16 @@ class Token < ActiveRecord::Base
   def to_params
     {
       'refresh_token' => refresh_token,
-      'client_id' => ENV['CLIENT_ID'],
-      'client_secret' => ENV['CLIENT_SECRET'],
-      'grant_type' => 'refresh_token',
+      # 'client_id' => ENV['CLIENT_ID'],
+      # 'client_secret' => ENV['CLIENT_SECRET'],
+      'client_id' => '2084bd37-83a4-4589-9b7b-63d4ba2fedb8',
+      'client_secret' => 'Ak9rH7u6XIBVgBpGCvRDrETKqdLp2IwTPHicpBLQ9tg=',
+      'grant_type' => 'authorization_code',
+      # 'grant_type' => 'refresh_token',
     }
   end
+  #azure = client = 2084bd37-83a4-4589-9b7b-63d4ba2fedb8
+  #key = Ak9rH7u6XIBVgBpGCvRDrETKqdLp2IwTPHicpBLQ9tg=
 
   def request_token_from_google
     url = URI("https://accounts.google.com/o/oauth2/token")

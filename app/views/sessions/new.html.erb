@@ -1,3 +1,17 @@
 <%# app/views/sessions/new.html.erb %>
 <%= link_to "Authenticate with Google!", '/auth/google_oauth2' %>
+<br>
+<%= link_to "Authenticate with Office 365!", '/auth/office365' %>
+<br>
 
+
+
+
+
+     <% @event_list.each do |item|%>
+   <%= "#{item.subject} - #{item.start} - #{item.end}" %>
+   <br>
+ <% end %>
+
+ <%= debug @busy_times%>
+ <%= debug @cli%>
