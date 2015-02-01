@@ -8,8 +8,10 @@ gem 'sqlite3'
 gem 'byebug'
 
 # gem 'omniauth-office365', :git => 'git@github.com:simi/omniauth-office365.git'
+gem 'omniauth-office365'
+#, :path => '/Users/jake/Documents/workspace/omniauth-office365/pkg'
 
-gem 'viewpoint', :git => 'git@github.com:WinRb/Viewpoint.git'
+# gem 'viewpoint', :git => 'git@github.com:WinRb/Viewpoint.git'
 # Slim for layouts, includes scaffolding
 gem "slim-rails"
 

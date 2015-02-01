@@ -4,6 +4,7 @@ GmailAlerts::Application.routes.draw do
   resources :sessions, :only => [:index] do
     get :calendar, :on => :collection
     get :events, :on => :collection
+    get :success, :on => :collection
   end
 
 

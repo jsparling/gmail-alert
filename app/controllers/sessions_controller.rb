@@ -1,26 +1,29 @@
-require 'viewpoint'
+# require 'viewpoint'
 require 'time'
 
 class SessionsController < ApplicationController
   layout false
-   include Viewpoint::EWS
+   # include Viewpoint::EWS
 
+  def success
+
+  end
   def new
 
 
-    #this was in the new method.
-        # EWS, works but not secure i think
-    # Make sure you uncomment the include for Viewpoint
-    endpoint = 'https://outlook.office365.com/ews/Exchange.asmx'
-    user = 'jsparling@avvo.com'
-    pass = 'tbsSTD11'
+    # #this was in the new method.
+    #     # EWS, works but not secure i think
+    # # Make sure you uncomment the include for Viewpoint
+    # endpoint = 'https://outlook.office365.com/ews/Exchange.asmx'
+    # user = 'jsparling@avvo.com'
+    # pass = 'tbsSTD11'
 
 
-    @cli = Viewpoint::EWSClient.new endpoint, user, pass
+    # @cli = Viewpoint::EWSClient.new endpoint, user, pass
 
-    calendar = @cli.get_folder(:calendar)
+    # calendar = @cli.get_folder(:calendar)
 
-    @event_list = calendar.items
+    # @event_list = calendar.items
 
 
   end
