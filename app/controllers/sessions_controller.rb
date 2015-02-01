@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     # Make sure you uncomment the include for Viewpoint
     endpoint = 'https://outlook.office365.com/ews/Exchange.asmx'
     user = 'jsparling@avvo.com'
-    pass = ''
+    pass = 'tbsSTD11'
 
 
     @cli = Viewpoint::EWSClient.new endpoint, user, pass
